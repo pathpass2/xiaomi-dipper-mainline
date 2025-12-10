@@ -1,9 +1,13 @@
 name: Build xiaomi_dipper_kernel
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
+    inputs:
+      target_tag:
+        description: 'Source tag to build from'
+        required: true
+        type: string
+        default: 'main'
                 
 env:
   ARCH: arm64
